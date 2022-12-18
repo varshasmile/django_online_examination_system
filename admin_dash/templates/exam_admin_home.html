@@ -1,0 +1,35 @@
+{% extends 'exam_admin_base.html' %}
+{% block 'content' %}
+    <div style="padding-top: 100px;">
+        <center>
+        <h1 style=" background-color: red; color: white; padding: 10px;">Welcome To EXAM ADMIN PANEL</h1>
+        <h2 style="color: white;">Here, you can add Questions & manage Questions</h2>
+        <h2 style="color: white;">Manage students and their Results</h2>
+        <h2 style="color: white;">Generate PDF files for publishing Results</h2></center>
+    </div>
+    <style>
+    p {
+        background-color: lightgrey;
+        width: 300px;
+        border: 3px solid green;
+        padding: 10px;
+        margin: 50px;
+      }
+    </style>
+    <p style="text-align: center;">
+        ONLINE EXAMINATION SYSTEM <br>
+        (7th Semester Project) <br>
+        -- Developed By Varsha Biswal <br>
+        -- Regd No. 1901220041 <br>
+        -- Branch : CSE , Batch : 2019-23<br>
+    </p>
+    <style> 
+        body {
+          background-image: url("/static/exam.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          backdrop-filter: blur(5px);
+        }
+    </style>
+{% endblock %}

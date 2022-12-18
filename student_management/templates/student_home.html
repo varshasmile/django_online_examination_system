@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block 'body' %}
+<script>
+    distance=20*60*1000
+                sessionStorage.setItem('distance',distance);
+</script>
+        
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="row" style="margin-top: 100px;">
+                <div class="col-30" style="text-align: center; text-decoration: underline; color: green; size: 100px;">
+                    <h1>VB ONLINE EXAMINATION SYSTEM</h1>
+                </div>
+                <div class="col-5">
+                    <div class="row" style="text-align: center; size: 50px">
+                        <div style="color: brown;" class="col-10">Total marks : 30 (for each Paper)</div>
+                        <div style="color: brown;" class="col-10">Time : 20 Minutes (for each Paper)</div>
+                        <p>
+                            <h3 style="color: darkblue;"> <b><mark>INSTRUCTIONS: </mark></b></h3>
+                                <p style="color: darkblue; border-width:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+                                    1. You will give exam for the paper you registered. <br>
+                                    2. There are total 3 Sets, Choose One-By-One & Give Exam. <br>
+                                    3. Each Paper consists of 10 Questions, 3 marks each. (Total 30 Marks) <br>
+                                    4. When your 20 min Time is finished, you will be Logged Out Automatically. <br>
+                                    5. If you are finished with the exam before time, come out by Logging Out. <br>
+                                    6. AN ANSWER ONCE SAVED, WILL NOT BE CHANGED, SO THINK WELL BEFORE CLICKING 'SAVE'! <br>
+                                    7. You can ask for your results to the ADMIN.
+                                </p>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <h4 style="font-size: 30px; font-style:italic;">Welcome, {{request.user.name}}</h4>
+                    <h2 style="font-size: 20px; color:blue; text-decoration: solid;"><b>{{msg}}</b></h2>
+                </div>
+                <div class= 'row'>
+                    <form id="registration" class="form-inline" method="POST" action=""> {% csrf_token %}
+                        <div class="col-6" style="text-align: center;">
+                            <h6 style="font-size: 20px;"> Your Registered Course : {{request.user.course}}</h6>
+                            <h5 style="font-size: 20px;">Choose Your Paper:</h5>
+                            <h6 style="font-size: 20px;"> Set : {{form.paper}}</h6>
+                        </div><br><br>
+                        <div class="col-6">
+                            <button class="btn btn-primary" style="width: 100%; height: 70px; line-height: 100px; text-align: center;" type="submit"><h3>Enter To Give Exam</h3></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-10" style="text-align: right;">
+                    <h4><a href="{% url 'logout' %}" style="color: red;" >Want To Exit? Click Here</a></h4>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+{% endblock %}
